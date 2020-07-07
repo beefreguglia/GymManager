@@ -1,0 +1,13 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "name": "Bernardo Brandão Freguglia",
+      "avatar_url": "https://www.google.com/",
+      "birth": 843436800000,
+      "gender": "M",
+      "services": "Musculaçao,crossfit",
+      "created_at": 1594148297762
+    }
+  ]
+}
