@@ -28,3 +28,5 @@ server.listen(5000, function(){
     console.log('Server is Running')
 
 })
+
+//netstat -putan | grep $porta para achar o processo utilizando a porta
