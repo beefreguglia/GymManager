@@ -22,6 +22,16 @@ routes.get('/instructors/create', function(req, res){
 
 routes.post('/instructors', instructors.post)
 
+//Verbos HTTP 
+//GET = Receber RESOURCE
+//POST = Criar ou salvar um novo RESOURCE com dados enviados
+//PUT = Atualizar um RESOURCE em um dado enviado 
+//DELETE = Deletar RESOURCE existente
+
+routes.put('/instructors', instructors.put)
+
+routes.delete('/instructors', instructors.delete)
+
 routes.get('/instructors/:id', instructors.show)
 
 routes.get('/instructors/:id/edit', instructors.edit)

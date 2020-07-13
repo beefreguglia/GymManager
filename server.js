@@ -2,6 +2,7 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
 const routes = require('./routes')
+const methodOverride = require('method-override')
 
 //Declarando o servidor express
 const server = express()
@@ -10,6 +11,8 @@ const server = express()
 //Declarando Middlewares
 server.use(express.urlencoded({extended: true}))
 server.use(express.static('public'))
+//Mifleware do methodOverride precisa vir antes do routes
+server.use(methodOverride('_method'))
 server.use(routes)
 
 //Configurando view engine

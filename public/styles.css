@@ -227,6 +227,7 @@ a.button{
     width: 100%;
     color: white;
     font-size: 20px;
+    cursor: pointer;
 
 }
 
@@ -236,5 +237,12 @@ a.button{
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
+
+}
+
+#form-delete button[type="submit"]{
+
+    margin-top: 8px;
+    background-color: rgb(223, 71, 71);
 
 }

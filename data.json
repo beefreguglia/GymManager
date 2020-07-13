@@ -1,22 +1,13 @@
 {
   "instructors": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Bernardo Brandão Freguglia",
       "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
       "birth": 843436800000,
       "gender": "M",
       "services": "Musculaçao,crossfit",
       "created_at": 1594148297762
-    },
-    {
-      "id": 2,
-      "name": "asdsdasdasads",
-      "avatar_url": "https://www.google.com/",
-      "birth": 825724800000,
-      "gender": "O",
-      "services": "Musculaçao,crossfit,natação",
-      "created_at": 1594242160856
     }
   ]
 }
