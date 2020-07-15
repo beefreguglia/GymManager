@@ -26,9 +26,63 @@ module.exports = {
         const month = `0${date.getUTCMonth() + 1}`.slice(-2)
         const day = `0${date.getUTCDate()}`.slice(-2)
 
-        return `${year}-${month}-${day}`
+        return {
+            
+            day,
+            month,
+            year, 
+            iso: `${year}-${month}-${day}`,
+            birthDay: `${day}-${month}`
+
+        } //ISO
+
+    },
+    bloodType: function(blood){
+
+        if(blood == "A1"){
+
+            return "A+"
+
+        }
+        if(blood == "A0"){
+
+            return "A-"
+
+        }if(blood == "B1"){
+
+            return "B+"
+
+        }
+        if(blood == "B0"){
+
+            return "B-"
+
+        }if(blood == "AB1"){
+
+            return "AB+"
+
+        }
+        if(blood == "AB0"){
+
+            return "AB-"
+
+        }
+        if(blood == "O1"){
+
+            return "O+"
+
+        }
+        if(blood == "O0"){
+
+            return "O-"
+
+        }
+        else{
+
+            return "Sangue nao encontrado"
+
+        }
 
     }
-
 
 }

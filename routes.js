@@ -1,6 +1,13 @@
 const express = require('express')
 const routes = express.Router()
-const instructors = require('./instructors')
+const instructors = require('./controllers/instructors')
+const members = require('./controllers/members')
+
+//Verbos HTTP 
+//GET = Receber RESOURCE
+//POST = Criar ou salvar um novo RESOURCE com dados enviados
+//PUT = Atualizar um RESOURCE em um dado enviado 
+//DELETE = Deletar RESOURCE existente
 
 routes.get('/', function(req, res){
 
@@ -8,25 +15,11 @@ routes.get('/', function(req, res){
 
 })
 
-routes.get('/instructors', function(req, res){
+routes.get('/instructors', instructors.index)
 
-    return res.render("instructors/index")
-
-})
-
-routes.get('/instructors/create', function(req, res){
-
-    return res.render("instructors/create")
-
-})
+routes.get('/instructors/create', instructors.create)
 
 routes.post('/instructors', instructors.post)
-
-//Verbos HTTP 
-//GET = Receber RESOURCE
-//POST = Criar ou salvar um novo RESOURCE com dados enviados
-//PUT = Atualizar um RESOURCE em um dado enviado 
-//DELETE = Deletar RESOURCE existente
 
 routes.put('/instructors', instructors.put)
 
@@ -36,10 +29,22 @@ routes.get('/instructors/:id', instructors.show)
 
 routes.get('/instructors/:id/edit', instructors.edit)
 
-routes.get('/members', function(req, res){
 
-    return res.send("members")
+/* MEMBERES */
 
-})
+routes.get('/members', members.index)
+
+routes.get('/members/create', members.create)
+
+routes.post('/members', members.post)
+
+routes.put('/members', members.put)
+
+routes.delete('/members', members.delete)
+
+routes.get('/members/:id', members.show)
+
+routes.get('/members/:id/edit', members.edit)
+
 
 module.exports = routes

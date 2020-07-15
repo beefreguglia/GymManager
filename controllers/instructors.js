@@ -1,9 +1,40 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { age, date } = require('./utils')
+const data = require('../data.json')
+const { age, date } = require('../utils')
+
+//index
+exports.index = function(req,res){
+
+    let inst = []
+
+    for(let index = 1;index < data.instructors.length+1; index++){
+
+        const foundInstructor = data.instructors.find(function(instructor){
+
+            return instructor.id == index
+
+        })
+        if (!foundInstructor) {
+
+            return res.send("instructor not found")
+    
+        }
+
+        inst.push({
+
+            ...foundInstructor,
+            services: foundInstructor.services.split(",")
+        
+        }) 
+
+
+    }
+
+    return res.render("instructors/index", {instructors: inst})
+
+}
 
 //show
-
 exports.show = function (req, res) {
 
     const { id } = req.params
@@ -93,6 +124,12 @@ exports.post = function (req, res) {
 
 }
 
+exports.create = function(req, res){
+
+    return res.render("instructors/create")
+
+}
+
 //Funcoes para update
 
 exports.edit = function (req, res) {
@@ -114,7 +151,7 @@ exports.edit = function (req, res) {
     const instructor  = {
 
         ...foundInstructor,
-        birth: date(foundInstructor.birth)
+        birth: date(foundInstructor.birth).iso
 
     }
 
@@ -148,7 +185,8 @@ exports.put = function(req, res){
 
         ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
 
     }
 
