@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/beefreguglia/GymManager#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "method-override": "^3.0.0",
     "nunjucks": "^3.2.1"
   },
